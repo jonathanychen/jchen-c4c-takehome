@@ -16,8 +16,8 @@ function App() {
         <form onSubmit={(event) => {
           event.preventDefault();
           let msg = document.querySelector('input').value;
-          console.log("Input message: %s", msg)
           ws.send(msg);
+          document.querySelector('input').value = "";
         }}>
           <input type="text" placeholder="Type here..."/>
           <button type="submit">Submit</button>

@@ -1,13 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ws_1 = require("ws");
-var wss = new ws_1.WebSocketServer({ port: 8080 });
-wss.on("connection", function (ws) {
+const ws_1 = require("ws");
+const wss = new ws_1.WebSocketServer({ port: 8080 });
+const messages = new Array();
+wss.on("connection", (ws) => {
     console.log("Connection made.");
+    messages.forEach(msg => {
+        ws.send(msg);
+    });
     ws.on("error", console.error);
-    ws.on("message", function (data, isBinary) {
+    ws.on("message", (data, isBinary) => {
         console.log("received: %s", data.toString());
-        wss.clients.forEach(function (client) {
+        messages.push(data.toString());
+        wss.clients.forEach(client => {
             if (client.readyState === ws_1.WebSocket.OPEN) {
                 client.send(data, { binary: isBinary });
             }
