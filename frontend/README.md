@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! I'm Jonathan, and this is my take-home assessment for the C4C developer position. 
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+At its core, this project revolves around a simple websocket in the frontend and a websocket server in the backend. When the send button is pressed while there is a valid message in the form input, the message is sent through the websocket to the server. The server then broadcasts it to all connected websockets, resulting in real-time appearance of messages on the boards of all connected users. 
 
-### `npm start`
+Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Send messages in real-time to a board.
+- Messages limited to those which are at least 1 character and at most 128 characters long.
+- Multiple users/windows can see messages being sent at the same time.
+- EXTRA: If there are already messages on the board, a new window will backfill them for the new session in their original order. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Quick Start
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository.
+2. Navigate to `jchen-c4c-takehome/frontend` and run `npm i` and then `npm start`
+3. Navigate to `jchen-c4c-takehome/backend` and run `npm i` and then `npm start`
+4. Visit the page at `localhost:3000`
